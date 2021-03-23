@@ -1,0 +1,23 @@
+.searchBar {
+  display: grid;
+  margin: 80px auto;
+  grid-template-columns: 1fr 400px 1fr;
+}
+
+.searchBar img {
+  grid-column: 2/3;
+}
+
+.searchBar input {
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 50px;
+  border: none;
+  background: #BAE6BB;
+  outline: none;  
+  width: 450px;
+  margin-top: 20px;
+  font-size: 18px;
+
+  grid-column: 2/3;
+}

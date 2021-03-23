@@ -1,14 +1,14 @@
 import React from "react";
-import Header from "./components/Header";
-import GetFeatured from "./components/GetFeatured";
+import "./App.css";
+import HomePage from "./components/HomePage.js";
+import SearchPage from "./components/SearchPage/index";
 
 function App() {
   return (
     <div>
-      <Header />
-      <h1>Search Bar</h1>
-      <h1>Test 4</h1>
-      <GetFeatured/>
+    header
+      {/*<HomePage /> */} 
+      <SearchPage />
     </div>
   );
 }
