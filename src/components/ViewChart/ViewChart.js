@@ -1,4 +1,3 @@
-import { red } from '@material-ui/core/colors'
 import React from 'react'
 
 function ViewChart() {

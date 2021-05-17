@@ -1,0 +1,16 @@
+{
+  "location": [
+    {
+      "name": "New Delhi",
+      "type": "State",
+      "description": "New Delhi is the capital of India and an administrative district of NCT Delhi. New Delhi is also the seat of all three branches of the government of India, hosting the Rashtrapati Bhavan, Parliament House, and the Supreme Court of India.",
+      "id": 1
+    },
+    {
+      "name": "Mumbai",
+      "type": "City",
+      "description": "Mumbai (formerly called Bombay) is a densely populated city on India’s west coast. A financial center, it's India's largest city. On the Mumbai Harbour waterfront stands the iconic Gateway of India stone arch, built by the British Raj in 1924. Offshore, nearby Elephanta Island holds ancient cave temples dedicated to the Hindu god Shiva. The city's also famous as the heart of the Bollywood film industry.",
+      "id": 1
+    }
+  ]
+}
