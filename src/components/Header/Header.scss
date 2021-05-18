@@ -4,12 +4,12 @@
   background-color: $color-header;
   
   &__logo{
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: $body-max-width;
     padding: 0 2rem;
+    margin: auto;
 
     .logo {
-      padding-top: 1rem;
+      padding-top: .6rem;
     }
   }
 
@@ -19,9 +19,10 @@
     ul {
       display: flex;
       justify-content: center;
-      padding: 0.5em 0;
+      padding: .6rem 0;
       li {
         list-style-type: none;
+        font-size: 1rem;
         
         &:not(:last-child){
           border-right: 1px solid $color-white;

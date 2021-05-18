@@ -1,12 +1,14 @@
 @import "../../styles/abstracts/variables";
 
 .searchPage {
-  margin: 5rem auto;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   display: grid;
   grid-template-columns: 70% 30%;
-  max-width: 1440px;
+
+  max-width: $body-max-width;
   padding: 0 2rem;
+  margin: 5rem auto;
+
   // background-color: rgb(236, 91, 91);
 
   &__info {

@@ -1,7 +1,49 @@
 @import "../../styles/abstracts/_variables.scss";
 
 .getFeatured {
-  height: 100px;
   width: 100%;
   background-color: $color-primary;
+  margin: 5rem 0;
+  height: 16rem;
+  
+  &__body {
+    max-width: $body-max-width;
+    margin: auto;
+    padding: 2rem;
+    
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    
+    &--text {
+
+      &-heading {
+        letter-spacing: -1px;
+      }
+  
+      &-para {
+        font-size: 1.2rem;      
+      }
+  
+      &-btn {
+        margin-top: 2.3rem;
+        width: 18rem;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &--img {  
+      margin: auto;
+      position: relative;
+
+      img {
+        width: 16rem;
+        position: absolute;
+        top: -9rem;
+        left: -7rem;
+      }
+    }
+  }
+
 }
