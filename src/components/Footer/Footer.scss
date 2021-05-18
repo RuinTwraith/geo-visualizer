@@ -1,0 +1,16 @@
+@import "../../styles/abstracts/_variables.scss";
+
+.footer {
+  width: 100%;
+  // border-top: 2px solid lighten($color: $color-black, $amount: 20);
+  background-color: darken($color: $color-white, $amount: 10);
+
+  &__body {
+    max-width: $body-max-width;
+    text-align: center;
+    color: $color-black;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+}

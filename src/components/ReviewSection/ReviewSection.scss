@@ -1,0 +1,36 @@
+@import "../../styles/abstracts/_variables.scss";
+
+.review {
+  font-size: 1rem;
+  background-color: $color-primary;
+  // padding: 2rem;
+  
+  &__body {
+    background-color: $color-white;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+
+    max-width: $body-max-width;
+    padding: 1.5rem;
+    margin: 2rem auto;
+
+
+    &--img {
+      width: 3rem;
+      height: 3rem;
+      background: $img-gradient;
+      border-radius: 100px;
+      margin-top: 1em;
+    }
+
+    &--text {
+      &-heading {
+        font-size: 1.2rem;
+      }
+
+      &-para {
+      }
+    }
+  }
+}

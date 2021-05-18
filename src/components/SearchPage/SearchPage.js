@@ -1,6 +1,7 @@
 import React from "react";
 import "./SearchPage.scss";
 import GetFeatured from "../GetFeatured/GetFeatured";
+import ReviewAndPhotos from "../ReviewAndPhotos/ReviewAndPhotos";
 
 function index() {
   return (
@@ -23,6 +24,8 @@ function index() {
       </div>
 
       <GetFeatured />
+
+      <ReviewAndPhotos />
       
     </div>
 

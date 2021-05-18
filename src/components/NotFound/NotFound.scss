@@ -1,0 +1,12 @@
+@import "../../styles/abstracts/_variables.scss";
+
+.notFound {
+  height: 90vh;
+  font-size: 1.5rem;
+
+  &__body {
+    max-width: $body-max-width;
+    margin: auto;
+    padding: 2rem;
+  }
+}

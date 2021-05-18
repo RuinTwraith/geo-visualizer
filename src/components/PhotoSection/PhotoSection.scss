@@ -1,0 +1,23 @@
+@import "../../styles/abstracts/_variables.scss";
+
+.photo {
+  background-color: $color-primary;
+  width: 100%;
+
+  &__body {
+    max-width: $body-max-width;
+
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    &--img {
+      width: 20rem;
+      height: 15rem;
+      background: $img-gradient;
+      margin: 0 .2rem .2rem 0;
+      border-radius: 12px;
+    }
+  }
+}
