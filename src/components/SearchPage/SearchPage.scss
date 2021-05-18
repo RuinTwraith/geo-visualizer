@@ -1,0 +1,24 @@
+@import "../../styles/abstracts/variables";
+
+.searchPage {
+  margin: 5rem auto;
+  font-size: 1.2em;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  max-width: 1440px;
+  padding: 0 2rem;
+  // background-color: rgb(236, 91, 91);
+
+  &__info {
+    // background-color: rgb(145, 255, 0);
+    max-width: 60rem;
+  }
+  
+  &__img {
+    height: 20rem;
+    width: 20rem;
+    margin: auto;
+    border: 1px solid $color-black;
+    background: linear-gradient(45deg, $color-primary, $color-secondary);
+  }
+}

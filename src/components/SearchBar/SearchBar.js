@@ -1,10 +1,11 @@
 import React from "react";
-import './SearchBar.css';
+import LogoBlack from "../../resources/gv-logo-black.png";
+import './SearchBar.scss';
 
 function SearchBar() {
   return (
     <div className="searchBar">
-      {/* <img src={logo} alt="logo" height={80}/> */}
+      <img src={LogoBlack} alt="logo" />
       <input type="text" placeholder="Search for any location"/>
     </div>
   );
