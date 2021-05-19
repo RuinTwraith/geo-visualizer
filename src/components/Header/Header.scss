@@ -1,7 +1,8 @@
 @import "../../styles/abstracts/_variables.scss";
 
 .header {
-  background-color: $color-header;
+  background-color: $color-header;  
+  background: linear-gradient(180deg, $color-header 55%, darken($color-header, 6));
   
   &__logo{
     max-width: $body-max-width;
@@ -10,6 +11,7 @@
 
     .logo {
       padding-top: .6rem;
+      height: 50px;
     }
   }
 
@@ -27,12 +29,13 @@
         &:not(:last-child){
           border-right: 1px solid $color-white;
         }
-
+        
         a {
           text-decoration: none;
           color: $color-white;
-          padding: 0 2rem;          
+          padding: 0 2rem;
         } 
+
       }
     }
   }

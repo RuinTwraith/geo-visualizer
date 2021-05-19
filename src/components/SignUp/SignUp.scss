@@ -1,0 +1,80 @@
+@import "../../styles/abstracts/_variables.scss";
+@import "../../styles/layout/loginSignup.scss";
+
+.ls__form {
+  &--checkbox {
+    margin-top: 1rem;
+    padding-left: 2.5rem;
+
+    .custom-checkbox {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+
+      & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 4px;
+          left: -39px;
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          border-radius: 3px;
+          box-sizing: border-box;
+          border: 1px solid $color-secondary;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -8px;
+          left: -38px;
+          display: inline-block;
+          width: 23px;
+          height: 5px;
+          border-radius: 2px;
+          transition: all 250ms ease;
+          background-color: $color-secondary;
+          background-color: #e4e4e4;
+          // border: 1px solid transparent;
+        }
+      }
+
+      &:checked + label::after {
+        background-color: $color-secondary;
+        height: 23px;
+      }
+
+    }
+  }
+
+  &--create-account {
+    display: inline-flex;
+
+    .already-member {
+      display: inline-block;
+      font-size: 1rem;
+      margin-top: 1rem;
+      margin-left: 2rem;
+
+      &__login-instead {
+        display: block;
+
+        a {
+          text-decoration: none;
+          color: $color-black;
+          transition: all 200ms ease;
+
+          &:hover {
+            color: $color-yellow;
+          }
+        }
+      }
+    }
+  }
+}

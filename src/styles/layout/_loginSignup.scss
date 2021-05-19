@@ -1,0 +1,123 @@
+@import "../../styles/abstracts/_variables.scss";
+
+.ls {
+  width: 100%;
+  min-height: 100vh;
+  &__body {
+    max-width: $body-max-width;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+
+    &--left {
+      width: 20rem;
+      margin: 0 auto;
+      padding-right: 2rem;
+
+      &-logo {
+        img {
+          width: 100%;
+        }
+      }
+
+      &-text {
+        width: 90%;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+
+        .text-top {
+          font-size: 1.1rem;
+          text-align: center;
+        }
+        .text-btn {
+          justify-self: center;
+          margin: 1rem 0;
+          .button__btn {
+            width: 15rem;
+            background-color: $color-green;
+            color: $color-black;
+          }
+        }
+        .text-bottom {
+          text-align: center;
+          font-size: 1.1rem;
+          .points {
+            color: $color-yellow;
+          }
+        }
+      }
+    }
+
+    &--right {
+      border-left: 2px solid $color-secondary;
+      padding-left: 6rem;
+      min-width: 30rem;
+
+      &-heading {
+      }
+      &-google {
+        margin: 2rem auto;
+        .button__btn {
+          box-sizing: border-box;
+          border: 2px solid $color-secondary;
+          width: 16rem;
+        }
+      }
+      &-or {
+        font-size: 1rem;
+      }
+
+      .ls__form {
+        font-size: 1.1rem;
+        margin-top: 3rem;
+        display: grid;
+        column-gap: 3rem;
+        grid-template-columns: 1fr;
+        row-gap: 1.2rem;
+        width: 28rem;
+
+        .grid-1fr-1fr{
+          display: grid;
+          grid-template-columns: 1fr 1fr;          
+          column-gap: 2.5rem;
+        }
+
+        .label {
+          display: inline-block;
+          margin: 0.5rem 0;
+        }
+
+        input {
+          background-color: $color-white;
+          box-shadow: inset 3px 3px 10px #d0d9d9, 
+                      inset -3px -3px 10px #ffffff;
+          border-radius: 7px;
+          border: none;
+          padding: 0.8rem;
+          width: 100%;
+          font-family: $default-font;
+          font-size: 1rem;
+          box-sizing: border-box;
+          outline: none;
+          border: 2px solid transparent;
+
+          &:focus {
+            border: 2px solid $color-secondary;
+          }
+        }
+        &-btn {
+          margin-top: 1rem;
+          .button__btn {
+            background-color: $color-green;
+            color: $color-black;
+            width: 12rem;
+          }
+        }
+      }
+    }
+  }
+}

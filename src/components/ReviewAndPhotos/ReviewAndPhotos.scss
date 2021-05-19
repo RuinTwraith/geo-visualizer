@@ -2,6 +2,7 @@
 
 .rpSection {
   background-color: $color-primary;
+  background: linear-gradient(45deg, $color-white 10%, $color-primary);
   
   &__body {
     display: grid;

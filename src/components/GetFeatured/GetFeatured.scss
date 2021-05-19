@@ -3,8 +3,10 @@
 .getFeatured {
   width: 100%;
   background-color: $color-primary;
+  background: linear-gradient(120deg, $color-primary 20%, $color-white);
+  // background: linear-gradient(-25deg, #fdfdf0 10%, $color-primary);
   margin: 5rem 0;
-  height: 16rem;
+  height: 18rem;
   
   &__body {
     max-width: $body-max-width;
@@ -27,9 +29,13 @@
   
       &-btn {
         margin-top: 2.3rem;
-        width: 18rem;
+        width: 21rem;
         display: flex;
         justify-content: space-between;
+
+        .button__btn:hover {          
+          background: #f3f5e7;
+        }
       }
     }
 
@@ -38,7 +44,7 @@
       position: relative;
 
       img {
-        width: 16rem;
+        width: 18rem;
         position: absolute;
         top: -9rem;
         left: -7rem;

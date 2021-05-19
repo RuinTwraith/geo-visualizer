@@ -2,19 +2,21 @@
 
 .review {
   font-size: 1rem;
-  background-color: $color-primary;
+  // background-color: $color-primary;
   // padding: 2rem;
-  
+
   &__body {
-    background-color: $color-white;
-    border-radius: 15px;
+    background-color: $color-primary;    
+    background: linear-gradient(120deg, $color-primary 20%, $color-white);
+    border-radius: 20px;
     display: grid;
     grid-template-columns: 4rem 1fr;
 
     max-width: $body-max-width;
     padding: 1.5rem;
     margin: 2rem auto;
-
+    box-shadow: 13px 12px 20px #dde6e6, 
+                -13px -12px 20px #fcffff;
 
     &--img {
       width: 3rem;
@@ -30,6 +32,7 @@
       }
 
       &-para {
+        font-size: 1.1rem;
       }
     }
   }

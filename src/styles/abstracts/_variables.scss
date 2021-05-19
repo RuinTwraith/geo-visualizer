@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 // COLORS
-$color-header: #00293B;
-$color-navigation : #1B3D4B;
+$color-header: #113D43;
+$color-navigation : #1A555D;
 
-$color-primary: #E6E5FF;
-$color-secondary: #2640EE;
-$color-green: #BAE6BB;
+$color-primary: #e7f4f4;
+$color-secondary: #2a7781;
+
+$color-green: #d4f1e3;
+$color-yellow: #daac2d;
 
 $color-grey-dark: #777;
-$color-white: #fff;
+$color-white: #f5ffff;
 $color-black: #000;
 
 
 $img-gradient: linear-gradient(45deg, $color-primary, $color-secondary);
+$background-gradient: linear-gradient(45deg, $color-green, $color-white);
 
 //SIZE
 $body-max-width: 1440px;
+$column-gap: .5rem;
 
 //FONT
 $default-font: 'Karla', sans-serif;
