@@ -13,10 +13,11 @@ $color-yellow: #daac2d;
 $color-grey-dark: #777;
 $color-white: #f5ffff;
 $color-black: #000;
+$color-grey-light: #acacac;
 
 
 $img-gradient: linear-gradient(45deg, $color-primary, $color-secondary);
-$background-gradient: linear-gradient(45deg, $color-green, $color-white);
+$background-gradient: linear-gradient(90deg, $color-white 75%, $color-primary);
 
 //SIZE
 $body-max-width: 1440px;

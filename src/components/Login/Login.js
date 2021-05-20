@@ -23,39 +23,40 @@ const Login = () => {
           </div>
         </div>
 
+        <div className="right-background">
+          <div className="ls__body--right">
 
-        <div className="ls__body--right">
+            <h1 className="ls__body--right-heading">Login</h1>
+            <div className="ls__body--right-google">
+              <Button name="Continue with Google" />
+            </div>
+            <div className="ls__body--right-or">OR</div>
 
-          <h1 className="ls__body--right-heading">Login</h1>
-          <div className="ls__body--right-google">
-            <Button name="Continue with Google" />
+            <form className="ls__form">
+              <div className="ls__form-email">
+                <label htmlFor="email">
+                  <span className="label">
+                    Username or Email
+                </span>
+                  <input id="email" name="email" type="text" />
+                </label>
+              </div>
+
+              <div className="ls__form-password">
+                <label htmlFor="password">
+                  <span className="label">
+                    Password
+                </span>
+                  <input id="password" name="password" type="password" />
+                </label>
+              </div>
+
+              <div className="ls__form-btn">
+                <Button name="login" />
+              </div>
+            </form>
+
           </div>
-          <div className="ls__body--right-or">OR</div>
-
-          <form className="ls__form">
-            <div className="ls__form-email">
-              <label htmlFor="email">
-                <span className="label">
-                  Username or Email
-                </span>
-                <input id="email" name="email" type="text" />
-              </label>
-            </div>
-
-            <div className="ls__form-password">
-              <label htmlFor="password">
-                <span className="label">
-                  Password
-                </span>
-                <input id="password" name="password" type="password" />
-              </label>
-            </div>
-
-            <div className="ls__form-btn">
-              <Button name="login" />
-            </div>
-          </form>
-
         </div>
       </div>
     </div>

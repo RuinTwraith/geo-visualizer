@@ -1,19 +1,24 @@
 @import "../../styles/abstracts/_variables.scss";
 
+$padding-top: 4rem;
+$padding-bottom: 2rem;
+
 .ls {
   width: 100%;
-  min-height: 100vh;
+  padding: 0;
+  background-color: $color-primary;
+
   &__body {
     max-width: $body-max-width;
-    margin: 2rem auto 0;
-    padding: 2rem;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 30rem 1fr;
+    min-height: 80vh;
 
     &--left {
       width: 20rem;
       margin: 0 auto;
-      padding-right: 2rem;
+      padding: $padding-top 0 $padding-bottom;
 
       &-logo {
         img {
@@ -52,15 +57,21 @@
       }
     }
 
+    .right-background {
+      background-color: $color-white;
+      background: $background-gradient;
+    }
     &--right {
+      padding: $padding-top 0 $padding-bottom;
       border-left: 2px solid $color-secondary;
       padding-left: 6rem;
       min-width: 30rem;
+      margin: 0;
 
       &-heading {
       }
       &-google {
-        margin: 2rem auto;
+        margin: 2rem auto 2rem;
         .button__btn {
           box-sizing: border-box;
           border: 2px solid $color-secondary;
@@ -68,21 +79,47 @@
         }
       }
       &-or {
+        display: inline-block;
         font-size: 1rem;
+        position: relative;
+        margin-left: 7rem;        
+        color: $color-grey-light; 
+        font-weight: 600;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 100px;
+          height: 2px;          
+          border-radius: 10px;
+          background-color: $color-grey-light;  
+          top: 10px;
+          left: -111px;
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          width: 100px;
+          height: 2px;
+          border-radius: 10px;
+          background-color: $color-grey-light;
+          top: 10px;
+          right: -111px;
+        }
       }
 
       .ls__form {
         font-size: 1.1rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
         display: grid;
         column-gap: 3rem;
         grid-template-columns: 1fr;
         row-gap: 1.2rem;
         width: 28rem;
 
-        .grid-1fr-1fr{
+        .grid-1fr-1fr {
           display: grid;
-          grid-template-columns: 1fr 1fr;          
+          grid-template-columns: 1fr 1fr;
           column-gap: 2.5rem;
         }
 
@@ -93,8 +130,7 @@
 
         input {
           background-color: $color-white;
-          box-shadow: inset 3px 3px 10px #d0d9d9, 
-                      inset -3px -3px 10px #ffffff;
+          box-shadow: inset 3px 3px 10px #d0d9d9, inset -3px -3px 10px #ffffff;
           border-radius: 7px;
           border: none;
           padding: 0.8rem;

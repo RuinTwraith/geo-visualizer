@@ -29,27 +29,32 @@
           box-sizing: border-box;
           border: 1px solid $color-secondary;
         }
+
         &::after {
           position: absolute;
           content: "";
-          bottom: -8px;
-          left: -38px;
-          display: inline-block;
-          width: 23px;
-          height: 5px;
+          top: 5px;
+          left: -37px;
+          // display: inline-block;
+          width: 20px;
+          height: 23px;
           border-radius: 2px;
           transition: all 250ms ease;
-          background-color: $color-secondary;
-          background-color: #e4e4e4;
+          background-image: url(../../resources/check.png);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: none;
+          // background-color: $color-secondary;
+          // background-color: #e4e4e4;
           // border: 1px solid transparent;
         }
       }
 
       &:checked + label::after {
-        background-color: $color-secondary;
-        height: 23px;
+        // background-color: $color-secondary;
+        display: block;
       }
-
     }
   }
 
