@@ -1,4 +1,5 @@
 @import "../../styles/abstracts/variables";
+@import "../../styles/layout/loaderFile";
 
 .searchPage {
   font-size: 1.2rem;
@@ -9,18 +10,48 @@
   padding: 0 2rem;
   margin: 5rem auto;
 
-  // background-color: rgb(236, 91, 91);
-
   &__info {
-    // background-color: rgb(145, 255, 0);
     max-width: 60rem;
+
+    &-description {
+      line-height: 1.6rem;
+    }
+
+    &-review {
+      font-weight: 600;
+      background-image: linear-gradient(
+        transparent 50%,
+        rgba(255, 155, 169, 0.459) 0px
+      );
+      color: $color-black;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 10px 2px 0;
+      background-position: 3px 2px;
+      background-repeat: no-repeat;
+    }
   }
-  
+
   &__img {
-    height: 20rem;
     width: 20rem;
     margin: auto;
-    border: 1px solid $color-black;
-    background: $img-gradient;
+    position: relative;
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    &-caption {
+      bottom: -0.5rem;
+      right: 0.4rem;
+      position: absolute;
+      background: $color-primary;
+      color: $color-black;
+      text-align: right;
+      width: fit-content;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+    }
   }
 }

@@ -1,0 +1,29 @@
+.loading {
+  border: 8px dotted $color-secondary;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: 1s loader linear infinite;
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+  &--center {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 23;
+  }
+}
+
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

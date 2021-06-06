@@ -2,10 +2,10 @@ import React from 'react';
 import SearchBar from "../SearchBar/SearchBar";
 import "./HomePage.scss";
 
-function HomePage() {
+function HomePage({handleData}) {
   return (
     <div className="homepage">
-      <SearchBar />
+      <SearchBar handleData={handleData}/>
     </div>
   )
 }

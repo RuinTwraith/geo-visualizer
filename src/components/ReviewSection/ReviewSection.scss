@@ -6,7 +6,7 @@
   // padding: 2rem;
 
   &__body {
-    background-color: $color-primary;    
+    background-color: $color-primary;
     background: linear-gradient(120deg, $color-primary 20%, $color-white);
     border-radius: 20px;
     display: grid;
@@ -15,8 +15,7 @@
     max-width: $body-max-width;
     padding: 1.5rem;
     margin: 2rem auto;
-    box-shadow: 13px 12px 20px #dde6e6, 
-                -13px -12px 20px #fcffff;
+    box-shadow: 13px 12px 20px #dde6e6, -13px -12px 20px #fcffff;
 
     &--img {
       width: 3rem;
@@ -24,6 +23,11 @@
       background: $img-gradient;
       border-radius: 100px;
       margin-top: 1em;
+
+      img {
+        width: 100%;
+        border-radius: 100px;
+      }
     }
 
     &--text {

@@ -9,19 +9,18 @@
   align-items: center;
   justify-items: center;
 
-  img {
+  &__logo {
     width: 23rem;
     // height: auto;
   }
 
-  input {
+  &__input {
     background-color: $color-white;
-    box-shadow: inset 3px 3px 10px #d0d9d9,
-            inset -3px -3px 10px #ffffff;
+    box-shadow: inset 3px 3px 10px #d0d9d9, inset -3px -3px 10px #ffffff;
     border-radius: 100px;
     border: none;
     outline: none;
-    
+
     padding: 1.3rem 2rem;
     margin-top: 3rem;
     line-height: 1.2rem;

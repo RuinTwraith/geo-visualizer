@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import "./App.scss";
 import Footer from "./components/Footer/Footer";
@@ -9,19 +9,25 @@ import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import SignUp from "./components/SignUp/SignUp";
 
+
 function App() {
+  const [searchKey, setSearchKey] = useState("");
+  const getSearchKey = (data) => {
+    console.log(data);
+    setSearchKey(data);
+  }
+
   return (
     <Router>
       <div className="App">
         <Header />
-
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePage handleData={getSearchKey} />
           </Route>
 
-          <Route path="/a">
-            <SearchPage />
+          <Route path={`/search/${searchKey}`}>
+            <SearchPage searchKey={searchKey}/>
           </Route>
 
           <Route path="/signup">
@@ -41,6 +47,7 @@ function App() {
       </div>
     </Router>
   );
+
 }
 
 export default App;
