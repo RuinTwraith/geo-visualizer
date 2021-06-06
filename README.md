@@ -8,7 +8,7 @@ This website offers to ease the location searching by presenting an adorable UI 
 
 ## Technical Description
 
-This is a MERN Stack project. Currently the UI design is completed and integration with Express server is work in progress.
+This was supposed MERN Stack project but for ease of developing I used Strapi with MongoDB, and React on Frontend.
 
 ## Available Scripts
 
