@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import LogoBlack from "../../resources/gv-logo-black.png";
-import './SearchBar.scss';
+import LogoBlack from "src/resources/gv-logo-black.png";
+import "./SearchBar.scss";
 import { useHistory } from "react-router-dom";
-import axios from '../axios';
+import axios from "src/api/axios";
 
 function SearchBar({ handleData }) {
   const history = useHistory();
-  const [searchKey, setSearchKey] = useState('');
+  const [searchKey, setSearchKey] = useState("");
 
   const handleSubmit = (e, handleData) => {
     e.preventDefault();
     let path = `/search/${searchKey}`;
     history.push(path);
     handleData(searchKey);
-  }
+  };
 
   return (
     <div className="searchBar">

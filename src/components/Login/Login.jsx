@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./Login.scss";
-import Logo from "../../resources/gv-logo-black.png";
-import Button from "../Button/Button";
-import { Link } from 'react-router-dom';
+import Logo from "src/resources/gv-logo-black.png";
+import Button from "src/components/Button";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -19,13 +19,15 @@ const Login = () => {
                 <Button name="Create new Account" />
               </Link>
             </div>
-            <p className="text-bottom">To add reviews, photos and get <span className="points">points</span>.</p>
+            <p className="text-bottom">
+              To add reviews, photos and get{" "}
+              <span className="points">points</span>.
+            </p>
           </div>
         </div>
 
         <div className="right-background">
           <div className="ls__body--right">
-
             <h1 className="ls__body--right-heading">Login</h1>
             <div className="ls__body--right-google">
               <Button name="Continue with Google" />
@@ -35,18 +37,14 @@ const Login = () => {
             <form className="ls__form">
               <div className="ls__form-email">
                 <label htmlFor="email">
-                  <span className="label">
-                    Username or Email
-                </span>
+                  <span className="label">Username or Email</span>
                   <input id="email" name="email" type="text" />
                 </label>
               </div>
 
               <div className="ls__form-password">
                 <label htmlFor="password">
-                  <span className="label">
-                    Password
-                </span>
+                  <span className="label">Password</span>
                   <input id="password" name="password" type="password" />
                 </label>
               </div>
@@ -55,12 +53,11 @@ const Login = () => {
                 <Button name="login" />
               </div>
             </form>
-
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import HomePage from "./components/HomePage/HomePage";
-import SearchPage from "./components/SearchPage/SearchPage";
-import Login from "./components/Login/Login";
-import NotFound from "./components/NotFound/NotFound";
-import SignUp from "./components/SignUp/SignUp";
-
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import HomePage from "./components/HomePage";
+import SearchPage from "./components/SearchPage";
+import Login from "./components/Login";
+import NotFound from "./components/NotFound";
+import SignUp from "./components/SignUp";
 
 function App() {
   const [searchKey, setSearchKey] = useState("");
   const getSearchKey = (data) => {
     console.log(data);
     setSearchKey(data);
-  }
+  };
 
   return (
     <Router>
@@ -27,7 +26,7 @@ function App() {
           </Route>
 
           <Route path={`/search/${searchKey}`}>
-            <SearchPage searchKey={searchKey}/>
+            <SearchPage searchKey={searchKey} />
           </Route>
 
           <Route path="/signup">
@@ -47,7 +46,6 @@ function App() {
       </div>
     </Router>
   );
-
 }
 
 export default App;
