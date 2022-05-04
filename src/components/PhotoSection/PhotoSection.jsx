@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./PhotoSection.scss";
 import axios from "src/api/axios";
 import { useLocation } from "react-router-dom";
+import Loader from "src/components/common/Loader";
 
 const PhotoSection = ({ searchKey }) => {
   const [photos, setPhotos] = useState(null);
@@ -53,7 +54,7 @@ const PhotoSection = ({ searchKey }) => {
 
   return (
     <div className="photo">
-      {isLoading && <div className="loading loading--center"></div>}
+      {isLoading && <Loader />}
       {photosLeft && (
         <div className="photo__body">
           <div className="photo__body-col">

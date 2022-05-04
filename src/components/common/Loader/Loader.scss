@@ -1,3 +1,5 @@
+@import "src/styles/abstracts/_variables.scss";
+
 .loading {
   border: 8px dotted $color-secondary;
   border-bottom-color: transparent;
@@ -17,7 +19,6 @@
     z-index: 23;
   }
 }
-
 
 @keyframes loader {
   0% {

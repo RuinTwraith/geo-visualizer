@@ -3,6 +3,7 @@ import "./ReviewSection.scss";
 import ReviewFiller from "./ReviewFiller";
 import axios from "src/api/axios";
 import { useLocation } from "react-router-dom";
+import Loader from "src/components/common/Loader";
 
 const ReviewSection = ({ searchKey }) => {
   const [reviews, setReviews] = useState(null);
@@ -32,7 +33,7 @@ const ReviewSection = ({ searchKey }) => {
   return (
     // <ReviewFiller />
     <div className="review">
-      {isLoading && <div className="loading loading--center"></div>}
+      {isLoading && <Loader />}
       {reviews &&
         reviews.map((review) => (
           <div className="review__body">

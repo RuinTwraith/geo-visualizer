@@ -1,16 +1,20 @@
-@import "../../styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_variables.scss";
 
 .header {
-  background-color: $color-header;  
-  background: linear-gradient(180deg, $color-header 55%, darken($color-header, 6));
-  
-  &__logo{
+  background-color: $color-header;
+  background: linear-gradient(
+    180deg,
+    $color-header 55%,
+    darken($color-header, 6)
+  );
+
+  &__logo {
     max-width: $body-max-width;
     padding: 0 2rem;
     margin: auto;
 
     .logo {
-      padding-top: .6rem;
+      padding-top: 0.6rem;
       height: 50px;
     }
   }
@@ -21,23 +25,22 @@
     ul {
       display: flex;
       justify-content: center;
-      padding: .6rem 0;
+      padding: 0.6rem 0;
       margin-bottom: 0;
 
       li {
         list-style-type: none;
         font-size: 1rem;
-        
-        &:not(:last-child){
+
+        &:not(:last-child) {
           border-right: 1px solid $color-white;
         }
-        
+
         a {
           text-decoration: none;
           color: $color-white;
           padding: 0 2rem;
-        } 
-
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "src/components/Button";
+import Button from "src/components/common/Button";
 import getFeaturedImg from "src/resources/getFeatured.png";
 import "./GetFeatured.scss";
 

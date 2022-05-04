@@ -1,5 +1,5 @@
-@import "../../styles/abstracts/_variables.scss";
-@import "../../styles/layout/loginSignup.scss";
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/layout/loginSignup.scss";
 
 .ls__form {
   &--checkbox {
@@ -40,7 +40,7 @@
           height: 23px;
           border-radius: 2px;
           transition: all 250ms ease;
-          background-image: url(../../resources/check.png);
+          background-image: url("/resources/check.png");
           background-size: contain;
           background-position: center;
           background-repeat: no-repeat;

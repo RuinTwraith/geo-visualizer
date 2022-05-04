@@ -4,6 +4,7 @@ import GetFeatured from "src/components/GetFeatured";
 import ReviewAndPhotos from "src/components/ReviewAndPhotos";
 import axios from "src/api/axios";
 import { useLocation } from "react-router-dom";
+import Loader from "src/components/common/Loader";
 
 const SearchPage = ({ searchKey }) => {
   let url = useLocation();
@@ -32,7 +33,7 @@ const SearchPage = ({ searchKey }) => {
 
   return (
     <div>
-      {isLoading && <div className="loading loading--center"></div>}
+      {isLoading && <Loader />}
       {!isLoading && (
         <div>
           <div className="searchPage">
