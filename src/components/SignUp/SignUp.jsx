@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
 import "./SignUp.scss";
-import Logo from "../../resources/gv-logo-black.png";
-import Button from "../Button/Button";
-import { Link } from 'react-router-dom';
+import Logo from "src/resources/gv-logo-black.png";
+import Button from "src/components/Button";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
     <div className="ls">
       <div className="ls__body">
-
         <div className="ls__body--left">
           <div className="ls__body--left-logo">
             <img src={Logo} alt="Logo" />
@@ -20,13 +19,15 @@ const SignUp = () => {
                 <Button name="login" />
               </Link>
             </div>
-            <p className="text-bottom">To add reviews, photos and get <span className="points">points</span>.</p>
+            <p className="text-bottom">
+              To add reviews, photos and get{" "}
+              <span className="points">points</span>.
+            </p>
           </div>
         </div>
 
         <div className="right-background">
           <div className="ls__body--right">
-
             <h1 className="ls__body--right-heading">Sign Up</h1>
             <div className="ls__body--right-google">
               <Button name="Continue with Google" />
@@ -48,7 +49,6 @@ const SignUp = () => {
                     <input id="username" name="username" type="text" />
                   </label>
                 </div>
-
               </div>
 
               <div className="ls__form--email">
@@ -66,29 +66,34 @@ const SignUp = () => {
               </div>
 
               <div className="ls__form--checkbox">
-                <input className="custom-checkbox" type="checkbox" id="checkbox" />
+                <input
+                  className="custom-checkbox"
+                  type="checkbox"
+                  id="checkbox"
+                />
                 <label htmlFor="checkbox">
-                  By continuing, you agree to our User Agreement and Privacy Policy
-              </label>
+                  By continuing, you agree to our User Agreement and Privacy
+                  Policy
+                </label>
               </div>
 
               <div className="ls__form--create-account">
                 <div className="ls__form-btn">
                   <Button name="Create Account" />
                 </div>
-                <p className="already-member">Already a member?
-              <span className="already-member__login-instead">
+                <p className="already-member">
+                  Already a member?
+                  <span className="already-member__login-instead">
                     <Link to="/login">Login</Link> instead
-              </span></p>
+                  </span>
+                </p>
               </div>
-
             </form>
-
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;
