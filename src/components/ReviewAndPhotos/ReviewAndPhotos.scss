@@ -1,10 +1,9 @@
-@import "../../styles/abstracts/_variables.scss";
-// @import "../../styles/layout/loaderFile";
+@import "src/styles/abstracts/_variables.scss";
 
 .rpSection {
   background-color: $color-primary;
   background: linear-gradient(45deg, $color-white 10%, $color-primary);
-  
+
   &__body {
     display: grid;
     grid-template-columns: 1fr 5% 1fr;
@@ -13,21 +12,20 @@
     padding: 2rem;
     padding-top: 3rem;
 
-    &--heading{
+    &--heading {
       font-size: 2rem;
       font-weight: 700;
       border-bottom: 4px solid $color-black;
-      padding: 0 1.5rem .4rem 0;
+      padding: 0 1.5rem 0.4rem 0;
       display: inline-block;
     }
 
-    &--reviews{
+    &--reviews {
       // width: 90%;
       // margin: 0 auto;
     }
-    &--photos{
+    &--photos {
       grid-column: 3/4;
     }
-    
   }
 }

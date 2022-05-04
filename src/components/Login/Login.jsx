@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.scss";
 import Logo from "src/resources/gv-logo-black.png";
-import Button from "src/components/Button";
+import Button from "src/components/common/Button";
 import { Link } from "react-router-dom";
 
 const Login = () => {

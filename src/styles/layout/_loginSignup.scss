@@ -1,4 +1,4 @@
-@import "../../styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_variables.scss";
 
 $padding-top: 4rem;
 $padding-bottom: 2rem;
@@ -82,23 +82,23 @@ $padding-bottom: 2rem;
         display: inline-block;
         font-size: 1rem;
         position: relative;
-        margin-left: 7rem;        
-        color: $color-grey-light; 
+        margin-left: 7rem;
+        color: $color-grey-light;
         font-weight: 600;
 
         &::before {
           position: absolute;
-          content: '';
+          content: "";
           width: 100px;
-          height: 2px;          
+          height: 2px;
           border-radius: 10px;
-          background-color: $color-grey-light;  
+          background-color: $color-grey-light;
           top: 10px;
           left: -111px;
         }
         &::after {
           position: absolute;
-          content: '';
+          content: "";
           width: 100px;
           height: 2px;
           border-radius: 10px;
