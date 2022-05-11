@@ -1,34 +1,38 @@
-import React, { useEffect, useState } from "react";
-import "./SearchPage.scss";
-import GetFeatured from "src/components/GetFeatured";
-import ReviewAndPhotos from "src/components/ReviewAndPhotos";
-import axios from "src/api/axios";
-import { useLocation } from "react-router-dom";
-import Loader from "src/components/common/Loader";
+import React, { useEffect, useState } from 'react';
+import './SearchPage.scss';
+import GetFeatured from 'components/GetFeatured';
+import ReviewAndPhotos from 'components/ReviewAndPhotos';
+import axios from 'api/axios';
+import { useLocation } from 'react-router-dom';
+import { getLocationData } from 'common/utils';
+import Loader from 'components/common/Loader';
 
-const SearchPage = ({ searchKey }) => {
+const SearchPage = () => {
   let url = useLocation();
-  //console.log(url.pathname.slice(8));
-
-  const [data, setData] = useState([]);
+  const [location, setLocation] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const getData = () => {
-    searchKey = url.pathname.slice(8);
-    axios
-      .get(`/locations?name=${searchKey}`)
-      .then((res) => {
-        setData(res.data[0]);
-        setIsLoading(false);
-        console.log("SearchPage Result Status: " + res.status);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const handleSetData = ([location]) => {
+    const {
+      alternativeText = 'image',
+      url = '',
+      caption = '',
+    } = location ? location.photos[0].images[0] : {};
+
+    setLocation({
+      alternativeText,
+      caption,
+      imageSrc: `${axios.defaults.baseURL}${url}`,
+      ...location,
+    });
   };
 
   useEffect(() => {
-    getData();
+    getLocationData({
+      url,
+      handleSetData,
+      setIsLoading,
+    });
   }, []);
 
   return (
@@ -39,10 +43,12 @@ const SearchPage = ({ searchKey }) => {
           <div className="searchPage">
             <div className="searchPage__info">
               <p>
-                INDIA {">"} Type : {data.type}
+                INDIA {'>'} Type : {location.type}
               </p>
-              <h1 className="searchPage__info-name">{data.name}</h1>
-              <p className="searchPage__info-description">{data.description}</p>
+              <h1 className="searchPage__info-name">{location.name}</h1>
+              <p className="searchPage__info-description">
+                {location.description}
+              </p>
               <a
                 href="#review-photo-section"
                 className="searchPage__info-review"
@@ -50,22 +56,26 @@ const SearchPage = ({ searchKey }) => {
                 Read reviews
               </a>
             </div>
-            {data.photos && (
+            {location.photos && (
               <div className="searchPage__img">
-                <img
-                  src={`${axios.defaults.baseURL}${data.photos[0].images[0].url}`}
-                  alt={data.photos[0].images[0].alternativeText}
-                />
-                <p className="searchPage__img-caption">
-                  {data.photos[0].images[0].caption}
-                </p>
+                {location.imageSrc && (
+                  <>
+                    <img
+                      src={location.imageSrc}
+                      alt={location.alternativeText}
+                    />
+                    <p className="searchPage__img-caption">
+                      {location.caption}
+                    </p>
+                  </>
+                )}
               </div>
             )}
           </div>
 
           <GetFeatured />
           <div id="review-photo-section">
-            <ReviewAndPhotos searchKey={searchKey} />
+            <ReviewAndPhotos />
           </div>
         </div>
       )}

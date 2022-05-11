@@ -1,7 +1,7 @@
-import React from "react";
-import Button from "src/components/common/Button";
-import getFeaturedImg from "src/resources/getFeatured.png";
-import "./GetFeatured.scss";
+import React from 'react';
+import Button from 'components/common/Button';
+import getFeaturedImg from 'resources/getFeatured.png';
+import './GetFeatured.scss';
 
 const getFeatured = () => {
   return (

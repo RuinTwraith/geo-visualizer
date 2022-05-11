@@ -1,3 +1,14 @@
 .homepage {
-  height: 75vh;    //-------------to be removed--------------
+  display: grid;
+  width: 40%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+  &__logo {
+    width: 23rem;
+    margin-bottom: 3rem;
+  }
 }
