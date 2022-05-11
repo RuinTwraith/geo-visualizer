@@ -1,3 +1,3 @@
-import ReviewAndPhotos from "./ReviewAndPhotos";
+import ReviewAndPhotos from './ReviewAndPhotos';
 
 export default ReviewAndPhotos;

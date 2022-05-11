@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import LogoWhite from "src/resources/gv-logo-white.png";
-import "./Header.scss";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import LogoWhite from 'resources/gv-logo-white.png';
+import './Header.scss';
 
 class Header extends Component {
   render() {

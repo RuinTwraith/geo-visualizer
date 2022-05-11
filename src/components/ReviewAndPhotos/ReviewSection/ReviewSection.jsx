@@ -1,33 +1,23 @@
-import React, { useState, useEffect } from "react";
-import "./ReviewSection.scss";
-import ReviewFiller from "./ReviewFiller";
-import axios from "src/api/axios";
-import { useLocation } from "react-router-dom";
-import Loader from "src/components/common/Loader";
+import React, { useState, useEffect } from 'react';
+import './ReviewSection.scss';
+// import ReviewFiller from './ReviewFiller';
+import axios from 'api/axios';
+import { useLocation } from 'react-router-dom';
+import Loader from 'components/common/Loader';
+import { getLocationData } from 'common/utils';
 
-const ReviewSection = ({ searchKey }) => {
+const ReviewSection = () => {
+  let url = useLocation();
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  let url = useLocation();
-  const getReviews = () => {
-    // const id;
-    searchKey = url.pathname.slice(8);
-    axios
-      .get(`/reviews?location.name=${searchKey}`)
-      .then((res) => {
-        setReviews(res.data);
-        setIsLoading(false);
-        console.log("Result Status: " + res.status);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   useEffect(() => {
-    getReviews();
+    getLocationData({
+      url,
+      type: 'reviews',
+      handleSetData: setReviews,
+      setIsLoading,
+    });
   }, []);
 
   return (

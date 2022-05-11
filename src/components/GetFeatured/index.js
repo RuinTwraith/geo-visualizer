@@ -1,3 +1,3 @@
-import GetFeatured from "./GetFeatured";
+import GetFeatured from './GetFeatured';
 
 export default GetFeatured;

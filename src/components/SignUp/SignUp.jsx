@@ -1,8 +1,8 @@
-import React from "react";
-import "./SignUp.scss";
-import Logo from "src/resources/gv-logo-black.png";
-import Button from "src/components/common/Button";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './SignUp.scss';
+import Logo from 'resources/gv-logo-black.png';
+import Button from 'components/common/Button';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
@@ -20,7 +20,7 @@ const SignUp = () => {
               </Link>
             </div>
             <p className="text-bottom">
-              To add reviews, photos and get{" "}
+              To add reviews, photos and get{' '}
               <span className="points">points</span>.
             </p>
           </div>

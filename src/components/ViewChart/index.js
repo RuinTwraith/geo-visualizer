@@ -1,3 +1,3 @@
-import ViewChart from "./ViewChart";
+import ViewChart from './ViewChart';
 
 export default ViewChart;

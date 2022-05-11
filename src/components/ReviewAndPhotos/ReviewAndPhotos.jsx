@@ -1,20 +1,20 @@
-import React from "react";
-import PhotoSection from "src/components/PhotoSection";
-import ReviewSection from "src/components/ReviewSection";
-import "./ReviewAndPhotos.scss";
+import React from 'react';
+import PhotoSection from './PhotoSection';
+import ReviewSection from './ReviewSection';
+import './ReviewAndPhotos.scss';
 
-const ReviewAndPhotos = ({ searchKey }) => {
+const ReviewAndPhotos = () => {
   return (
     <div className="rpSection">
       <div className="rpSection__body">
         <div className="rpSection__body--reviews">
           <div className="rpSection__body--heading">Reviews</div>
-          <ReviewSection searchKey={searchKey} />
+          <ReviewSection />
         </div>
 
         <div className="rpSection__body--photos">
           <div className="rpSection__body--heading">Photos</div>
-          <PhotoSection searchKey={searchKey} />
+          <PhotoSection />
         </div>
       </div>
     </div>

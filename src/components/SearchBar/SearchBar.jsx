@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import LogoBlack from "src/resources/gv-logo-black.png";
-import "./SearchBar.scss";
-import { useHistory } from "react-router-dom";
-import axios from "src/api/axios";
+import React, { useState } from 'react';
+import './SearchBar.scss';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSearchKey } from 'features/searchKey/searchKeySlice';
 
-function SearchBar({ handleData }) {
+function SearchBar() {
   const history = useHistory();
-  const [searchKey, setSearchKey] = useState("");
+  const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState('');
 
-  const handleSubmit = (e, handleData) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    let path = `/search/${searchKey}`;
+    dispatch(setSearchKey(searchValue));
+    let path = `/search/${searchValue}`;
     history.push(path);
-    handleData(searchKey);
   };
 
   return (
     <div className="searchBar">
-      <img className="searchBar__logo" src={LogoBlack} alt="logo" />
-      <form onSubmit={(e) => handleSubmit(e, handleData)}>
+      <form onSubmit={handleSubmit}>
         <input
           className="searchBar__input"
           type="text"
           placeholder="Search for any location"
-          value={searchKey}
-          onChange={(e) => setSearchKey(e.target.value)}
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
         />
       </form>
     </div>

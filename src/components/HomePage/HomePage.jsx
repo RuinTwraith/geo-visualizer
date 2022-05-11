@@ -1,11 +1,13 @@
-import React from "react";
-import SearchBar from "src/components/SearchBar";
-import "./HomePage.scss";
+import React from 'react';
+import SearchBar from 'components/SearchBar';
+import LogoBlack from 'resources/gv-logo-black.png';
+import './HomePage.scss';
 
-function HomePage({ handleData }) {
+function HomePage() {
   return (
     <div className="homepage">
-      <SearchBar handleData={handleData} />
+      <img className="homepage__logo" src={LogoBlack} alt="logo" />
+      <SearchBar />
     </div>
   );
 }
