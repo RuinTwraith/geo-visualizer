@@ -2,7 +2,7 @@ import axios from 'api/axios';
 import store from 'app/store';
 
 const state = store.getState();
-const searchKey = state.searchKey.value;
+const searchKey = state.searchKey;
 
 const getSearchKeyFromUrl = (url = {}) => {
   return url.pathname?.slice(8);
@@ -23,12 +23,12 @@ export const getLocationData = async ({
   setIsLoading,
   type = '',
 }) => {
-  const searchValue = searchKey || getSearchKeyFromUrl(url);
+  let searchValue = searchKey || getSearchKeyFromUrl(url);
   const queryString = getQueryString(searchValue, type);
-  const response = await axios.get(queryString);
 
   try {
-    handleSetData(response.data);
+    const response = await axios.get(queryString);
+    handleSetData(response.data, searchValue);
   } catch (error) {
     console.log(error);
   } finally {
