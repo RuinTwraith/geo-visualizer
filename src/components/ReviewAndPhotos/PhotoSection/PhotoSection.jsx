@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './PhotoSection.scss';
 import axios from 'api/axios';
-import { useLocation } from 'react-router-dom';
-import { getLocationData } from 'common/utils';
 import Loader from 'components/common/Loader';
 
-const PhotoSection = () => {
-  let url = useLocation();
+const PhotoSection = ({ photos: photoProps = [] }) => {
   const [photos, setPhotos] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,16 +15,11 @@ const PhotoSection = () => {
     };
   };
 
-  const handleSetData = ([location]) => {
-    const [photos] = location.photos;
-    if (photos?.images) {
-      const images = splitPhotos(photos.images);
-      setPhotos(images);
-    }
-  };
-
   useEffect(() => {
-    getLocationData({ url, handleSetData, setIsLoading });
+    if (photoProps.length > 0) {
+      setPhotos(splitPhotos([...photoProps]));
+      setIsLoading(false);
+    }
   }, []);
 
   return (

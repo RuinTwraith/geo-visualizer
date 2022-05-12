@@ -5,17 +5,43 @@ import axios from 'api/axios';
 import { useLocation } from 'react-router-dom';
 import Loader from 'components/common/Loader';
 import { getLocationData } from 'common/utils';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchKey } from 'features/location/searchKeySlice';
+import { setLocationInfo } from 'features/location/locationInfoSlice';
 
-const ReviewSection = () => {
+const ReviewSection = ({ reviews: reviewProps = [] }) => {
   let url = useLocation();
+  const dispatch = useDispatch();
+  const searchKey = useSelector((state) => state.searchKey);
+  const locationInfo = useSelector((state) => state.locationInfo);
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const handleSetData = (reviewData, searchValue) => {
+    setReviews(reviewData);
+    if (!searchKey) dispatch(setSearchKey(searchValue));
+    if (reviewData.length) {
+      dispatch(
+        setLocationInfo({
+          [searchKey]: {
+            ...locationInfo[searchKey],
+            reviews: reviewData,
+          },
+        })
+      );
+    }
+  };
+
   useEffect(() => {
+    if (reviewProps.length > 0) {
+      setReviews(reviewProps);
+      setIsLoading(false);
+      return;
+    }
     getLocationData({
       url,
       type: 'reviews',
-      handleSetData: setReviews,
+      handleSetData,
       setIsLoading,
     });
   }, []);

@@ -11,7 +11,7 @@ import SignUp from './components/SignUp';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const searchKey = useSelector((state) => state.searchKey.value);
+  const searchKey = useSelector((state) => state.searchKey);
 
   return (
     <Router>

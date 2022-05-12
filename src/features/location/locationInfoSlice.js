@@ -2,14 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const locationInfoSlice = createSlice({
   name: 'locationInfo',
-  initialState: {
-    photos: [],
-    reviews: [],
-  },
+  initialState: {},
   reducers: {
-    setLocationInfo: (state, action) => {
-      state.value = action.payload;
-    },
+    setLocationInfo: (state, action) => ({
+      ...state,
+      ...action.payload,
+    }),
   },
 });
 

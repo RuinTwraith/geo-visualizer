@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SearchBar.scss';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setSearchKey } from 'features/searchKey/searchKeySlice';
+import { setSearchKey } from 'features/location/searchKeySlice';
 
 function SearchBar() {
   const history = useHistory();

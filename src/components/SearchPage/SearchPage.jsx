@@ -5,20 +5,42 @@ import ReviewAndPhotos from 'components/ReviewAndPhotos';
 import axios from 'api/axios';
 import { useLocation } from 'react-router-dom';
 import { getLocationData } from 'common/utils';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLocationInfo } from 'features/location/locationInfoSlice';
+import { setSearchKey } from 'features/location/searchKeySlice';
 import Loader from 'components/common/Loader';
 
 const SearchPage = () => {
   let url = useLocation();
+  const dispatch = useDispatch();
+  const searchKey = useSelector((state) => state.searchKey);
+  const locationInfo = useSelector((state) => state.locationInfo);
   const [location, setLocation] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleSetData = ([location]) => {
-    const {
-      alternativeText = 'image',
-      url = '',
-      caption = '',
-    } = location ? location.photos[0].images[0] : {};
+  const handleSetData = ([location], searchValue) => {
+    if (!location.photos.length) return;
 
+    const photos = location.photos[0].images;
+    const locationName = searchKey || searchValue;
+
+    handleSetLocation(location, photos[0]);
+    if (!searchKey) dispatch(setSearchKey(searchValue));
+    dispatch(
+      setLocationInfo({
+        [locationName]: {
+          id: location.id,
+          photos,
+          name: location.name,
+          description: location.description,
+          type: location.type,
+        },
+      })
+    );
+  };
+
+  const handleSetLocation = (location, photos) => {
+    const { alternativeText = 'image', url = '', caption = '' } = photos;
     setLocation({
       alternativeText,
       caption,
@@ -28,6 +50,12 @@ const SearchPage = () => {
   };
 
   useEffect(() => {
+    const photos = locationInfo[searchKey]?.photos;
+    if (photos?.length) {
+      handleSetLocation(locationInfo[searchKey], photos[0]);
+      setIsLoading(false);
+      return;
+    }
     getLocationData({
       url,
       handleSetData,
