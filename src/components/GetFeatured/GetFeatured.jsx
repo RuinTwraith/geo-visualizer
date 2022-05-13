@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'components/common/Button';
 import getFeaturedImg from 'resources/getFeatured.png';
 import './GetFeatured.scss';
+import AddInfoModal from './AddInfoModal';
 
-const getFeatured = () => {
+const GetFeatured = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalProps, setModalProps] = useState({});
+
+  const handleAddButtonClick = (type) => {
+    setOpenModal(true);
+    setModalProps({ type, onClose: setOpenModal });
+  };
+
   return (
     <div className="getFeatured">
       <div className="getFeatured__body">
@@ -16,8 +25,14 @@ const getFeatured = () => {
             the form of review or photos.
           </p>
           <div className="getFeatured__body--text-btn">
-            <Button name="Add a review" />
-            <Button name="Add a photo" />
+            <Button
+              name="Add a review"
+              onClick={() => handleAddButtonClick('Review')}
+            />
+            <Button
+              name="Add a photo"
+              onClick={() => handleAddButtonClick('Photo')}
+            />
           </div>
         </div>
 
@@ -25,8 +40,9 @@ const getFeatured = () => {
           <img src={getFeaturedImg} alt="Get Featured Img" />
         </div>
       </div>
+      <AddInfoModal openModal={openModal} {...modalProps} />
     </div>
   );
 };
 
-export default getFeatured;
+export default GetFeatured;

@@ -1,0 +1,25 @@
+@import 'styles/abstracts/_variables.scss';
+
+.input {
+  &__label {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+}
+input {
+  background-color: $color-white;
+  box-shadow: inset 3px 3px 10px #d0d9d9, inset -3px -3px 10px #ffffff;
+  border-radius: 7px;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  font-family: $default-font;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid transparent;
+
+  &:focus {
+    border: 2px solid $color-secondary;
+  }
+}

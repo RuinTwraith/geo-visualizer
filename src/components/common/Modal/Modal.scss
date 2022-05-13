@@ -1,0 +1,35 @@
+@import 'styles/abstracts/_variables.scss';
+@import 'styles/abstracts/_mixins.scss';
+
+.modal {
+  @include centerInParent;
+  position: fixed;
+  background-color: $color-white;
+  width: 70%;
+  padding: $modal-padding;
+  border-radius: $border-radius-l;
+  box-shadow: $modal-box-shadow;
+  z-index: 100;
+
+  &__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 16px;
+    height: auto;
+    cursor: pointer;
+    transition: ease 400ms;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+  &__title {
+    font-size: $heading-size;
+  }
+  &__content {
+    font-size: $body-text-size;
+  }
+}
