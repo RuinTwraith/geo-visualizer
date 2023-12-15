@@ -1,4 +1,4 @@
-@import "styles/abstracts/_variables.scss";
+@import 'styles/abstracts/_variables.scss';
 
 $padding-top: 4rem;
 $padding-bottom: 2rem;
@@ -88,7 +88,7 @@ $padding-bottom: 2rem;
 
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           width: 100px;
           height: 2px;
           border-radius: 10px;
@@ -98,7 +98,7 @@ $padding-bottom: 2rem;
         }
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 100px;
           height: 2px;
           border-radius: 10px;
@@ -128,23 +128,6 @@ $padding-bottom: 2rem;
           margin: 0.5rem 0;
         }
 
-        input {
-          background-color: $color-white;
-          box-shadow: inset 3px 3px 10px #d0d9d9, inset -3px -3px 10px #ffffff;
-          border-radius: 7px;
-          border: none;
-          padding: 0.8rem;
-          width: 100%;
-          font-family: $default-font;
-          font-size: 1rem;
-          box-sizing: border-box;
-          outline: none;
-          border: 2px solid transparent;
-
-          &:focus {
-            border: 2px solid $color-secondary;
-          }
-        }
         &-btn {
           margin-top: 1rem;
           .button__btn {
